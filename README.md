@@ -147,7 +147,7 @@ flowchart LR
     Orchestrator --> Governance[Governance & Guardrails]
     Orchestrator --> Observability[Observability]
 ```
-
+Pattern-oriented, governance-aware, production-ready multi-agent systems
 
 ## Connect
 
