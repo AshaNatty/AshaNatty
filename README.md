@@ -132,10 +132,10 @@ I approach AI systems as distributed systems:
 
 ---
 
-## Reference Architecture
+## Agentic AI Reference Architecture
 ```mermaid
 flowchart LR
-    Client[Client / UI] --> Gateway[API Gateway]
+    Client[Clients / Interfaces] --> Gateway[API / Gateway Layer]
     Gateway --> Orchestrator[Agent Orchestrator]
 
     Orchestrator --> Agents[Specialized Agents]
@@ -144,8 +144,8 @@ flowchart LR
     Agents --> Retrieval[Retrieval / RAG]
     Agents --> Tools[External Tools / APIs]
 
-    Orchestrator --> Governance[Policies + Guardrails + Audit]
-    Orchestrator --> Observability[Metrics / Logs / Traces]
+    Orchestrator --> Governance[Governance & Guardrails]
+    Orchestrator --> Observability[Observability]
 ```
 
 
