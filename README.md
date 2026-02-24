@@ -132,6 +132,46 @@ I approach AI systems as distributed systems:
 
 ---
 
+## Reference Architecture
+```mermaid
+flowchart LR
+    Client[Client / UI] --> API[API Gateway]
+    API --> Orchestrator[Agent Orchestrator]
+    Orchestrator --> Agents[Specialized Agents]
+    Agents --> Memory[Memory Layer]
+    Agents --> Retrieval[Retrieval / RAG]
+    Agents --> Tools[Tools / APIs]
+    Orchestrator --> Obs[Observability & Audit]
+```
+
+```mermaid
+flowchart TD
+    Orchestrator[Coordinator / Orchestrator] --> A1[Agent A]
+    Orchestrator --> A2[Agent B]
+    Orchestrator --> A3[Agent C]
+
+    A1 <--> A2
+    A2 <--> A3
+    A1 <--> A3
+
+    A1 --> Shared[Shared Context: Memory + Retrieval]
+    A2 --> Shared
+    A3 --> Shared
+
+    Orchestrator --> Governance[Governance: Policies + Audit + Guardrails]
+```
+
+```mermaid
+flowchart LR
+    Edge[Clients] --> Service[Agent Service]
+    Service --> Queue[Task Queue]
+    Service --> Cache[Session Cache]
+    Service --> Vector[Vector Store]
+    Service --> DB[Persistence DB]
+    Service --> LLM[LLM Provider]
+    Service --> Metrics[Metrics/Logs/Traces]
+```
+
 ## Connect
 
 Open to discussions on:
