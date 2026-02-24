@@ -147,7 +147,21 @@ flowchart LR
     Orchestrator --> Governance[Governance & Guardrails]
     Orchestrator --> Observability[Observability]
 ```
+Simplied architecture
 
+```mermaid
+flowchart LR
+    Clients --> Gateway
+    Gateway --> Orchestrator
+    Orchestrator --> Agents
+
+    Agents --> Memory
+    Agents --> Retrieval
+    Agents --> Tools
+
+    Orchestrator --> Governance
+    Orchestrator --> Observability
+```
 
 ## Connect
 
